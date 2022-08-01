@@ -49,7 +49,7 @@
             <ul class="d-flex align-items-center">
                 <li class="nav-item dropdown pe-3">
                     <a class="nav-link nav-profile d-flex align-items-center pe-2" href="{{ route('admin.logout') }}">
-                        <span>Sign Out</span>
+                        <span>تسجيل الخروج</span>
                     </a>
             </ul>
             </li><!-- End Profile Nav -->

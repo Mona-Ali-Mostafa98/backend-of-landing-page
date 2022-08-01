@@ -22,11 +22,11 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">ID</th>
-                                        <th scope="col">logo</th>
-                                        <th scope="col">Title</th>
-                                        <th scope="col">Created At</th>
-                                        <th scope="col">Updated At</th>
-                                        <th scope="col">Actions</th>
+                                        <th scope="col">اللوجو</th>
+                                        <th scope="col">عنوان الموقع</th>
+                                        <th scope="col">تاريخ الانشاء</th>
+                                        <th scope="col">تاريخ التعديل</th>
+                                        <th scope="col">الاجراءات</th>
                                     </tr>
                                 </thead>
                                 <tbody>
