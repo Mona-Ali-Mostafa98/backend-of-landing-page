@@ -43,7 +43,7 @@
                                                     height="60" width="60"></td>
                                             <td class="text-primary fw-bold">{{ $feature->title }}</td>
                                             <td>{{ $feature->status }}</td>
-                                            <td>{{ $feature->created_at }}</td>
+                                            <td>{{ $feature->created_at->toDateString() }}</td>
                                             <td>
                                                 <div class="d-flex justify-content-start">
                                                     <a href="{{ route('admin.features.show', $feature->id) }}"

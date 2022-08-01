@@ -62,8 +62,6 @@ class StatisticController extends Controller
         $statistic -> delete();
         return redirect()->route('admin.statistics.index')
             ->with('success' , "Statistic '$statistic->title' Deleted Successfully");
-
-
     }
 
 }

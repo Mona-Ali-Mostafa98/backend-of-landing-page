@@ -12,7 +12,7 @@ class SettingController extends Controller
     public function index()
     {
         return view('admin.settings.index', [
-            'settings' => Setting:: all()
+            'settings' => Setting:: first()->get()
         ]);
     }
 
@@ -43,16 +43,6 @@ class SettingController extends Controller
             $data['logo'] = "$logoName";
         }else{
             unset($data['logo']);
-        }
-
-        if ($request->hasFile('image') && $request->file('image')->isValid()) {
-            $image = $request->file('image');
-            $destinationPath = 'images/settings';
-            $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $imageName);
-            $data['image'] = "$imageName";
-        }else{
-            unset($data['image']);
         }
 
         $setting->update($data);

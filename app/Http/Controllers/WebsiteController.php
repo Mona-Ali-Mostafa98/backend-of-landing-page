@@ -17,11 +17,11 @@ class WebsiteController extends Controller
             'settings'=> Setting::first(),
             'social_links'=> SocialLink::all(),
             'statistics' => Statistic:: all(),
-            'features' => Feature::take(3)->get(),
-
+            'features' => Feature::all(),
         ]);
     }
 
+    // this function used to allow to user to send your email to subscribe in news of website
     public function subscribe(Request $request){
 
         $request->validate([
@@ -30,7 +30,7 @@ class WebsiteController extends Controller
         $data = $request->all();
         $subscription = News::create($data);
         return redirect()->route('landing-page')
-            ->with('success' , "you subscribe with '$subscription->email' in website news   Successfully");
+            ->with('success' , "you subscribe with '$subscription->email' in website news successfully");
 
     }
 }

@@ -24,10 +24,20 @@ class FeatureRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => ['required','string', 'max:255'],
+            'title' => ['required','string', 'min:5','max:255'],
             'description' => ['required','string'],
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'status'=>'required'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'عنوان الميزه مطلوب ادخاله',
+            'title.min' => 'العنوان لابد ان يكون على الاقل 5 حروف',
+            'title.max' => 'العنوان لابد الا يزيد عن 225 حروف',
+            'description.required' => 'وصف الميزه مطلوب ادخاله ',
         ];
     }
 }

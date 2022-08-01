@@ -25,9 +25,21 @@ class StatisticRequest extends FormRequest
     {
         $id = $this -> route ('statistic');
         return [
-            'title' => ['required','string', 'max:255' , 'unique:statistics,title,'.$id],
+            'title' => ['required','string', 'min:5' ,'max:255' , 'unique:statistics,title,'.$id],
             'counter'=> ['required' , 'numeric'],
             'status'=>'required'
+        ];
+    }
+
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'عنوان الاحصائيه مطلوب ادخاله',
+            'title.min' => 'العنوان لابد ان يكون على الاقل 5 حروف',
+            'title.max' => 'العنوان لابد الا يزيد عن 225 حروف',
+            'title.unique' => 'العنوان لابد ان لا يتكرر ',
+            'counter.required' =>  'عداد الاحصائيه مطلوب ادخاله',
         ];
     }
 }

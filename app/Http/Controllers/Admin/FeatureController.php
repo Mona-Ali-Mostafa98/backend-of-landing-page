@@ -43,23 +43,22 @@ class FeatureController extends Controller
 
     }
 
-
-    public function show($id)
+    public function show($feature)
     {
         return view('admin.features.show',[
-            'feature'=>Feature::findOrFail($id)
+            'feature'=>Feature::findOrFail($feature)
         ]);
     }
-    public function edit($id)
+    public function edit($feature)
     {
         return view('admin.features.edit', [
-            'feature' => Feature::find($id)
+            'feature' => Feature::findOrFail($feature)
         ]);
     }
 
-    public function update(FeatureRequest $request, $id)
+    public function update(FeatureRequest $request, $feature)
     {
-        $feature = Feature::findOrFail($id);
+        $feature = Feature::findOrFail($feature);
         $data = $request->except('image');
 
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
@@ -75,7 +74,7 @@ class FeatureController extends Controller
         $feature->update($data);
 
         return redirect()->route('admin.features.index')
-                        ->with('success',"Feature '$feature->title' updated successfully");
+            ->with('success',"Feature '$feature->title' updated successfully");
     }
 
     public function destroy($id)
@@ -83,5 +82,5 @@ class FeatureController extends Controller
         $feature = Feature::find($id);
         $feature -> delete();
         return redirect()->route('admin.features.index')
-         ->with('success' , "Feature '$feature->title' Deleted Successfully");
+            ->with('success' , "Feature '$feature->title' Deleted Successfully");
     }}

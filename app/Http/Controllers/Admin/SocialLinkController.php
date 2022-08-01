@@ -36,13 +36,14 @@ class SocialLinkController extends Controller
         $request->validate([
             'website_name' => ['required','string', 'max:255'],
             'website_url' => ['required','string'],
+            'website_icon' => ['required','string'],
         ]);
 
         $data = $request->all();
         $link->update($data);
 
         return redirect()->route('admin.social-links.index')
-            ->with('success',"Link '$link->website_name' updated successfully");
+            ->with('success',"Link of '$link->website_name' updated successfully");
 
     }
 

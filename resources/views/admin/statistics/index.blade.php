@@ -41,7 +41,7 @@
                                             <td class="text-primary fw-bold">{{ $statistic->title }}</td>
                                             <td>{{ $statistic->counter }}</td>
                                             <td>{{ $statistic->status }}</td>
-                                            <td>{{ $statistic->created_at }}</td>
+                                            <td>{{ $statistic->created_at->toDateString() }}</td>
                                             <td class="d-flex justify-content-start">
                                                 <a href="{{ route('admin.statistics.show', $statistic->id) }}"
                                                     class=" btn btn-sm btn-success">عرض</a>

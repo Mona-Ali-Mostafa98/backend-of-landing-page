@@ -23,6 +23,7 @@
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">الأيميل</th>
+                                        <th scope="col">تاريخ الاشتراك</th>
                                         <th scope="col">الاجراءات</th>
                                     </tr>
                                 </thead>
@@ -31,6 +32,7 @@
                                         <tr>
                                             <td>{{ $subscription->id }}</td>
                                             <td>{{ $subscription->email }}</td>
+                                            <td>{{ $subscription->created_at->toDateString() }}</td>
                                             <td>
                                                 <div class="d-flex justify-content-start">
                                                     <form class=" me-2 form-inline" method="post"

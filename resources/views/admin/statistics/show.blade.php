@@ -9,15 +9,6 @@
                             class="bi bi-caret-left-fill"></i> رجوع</a>
                 </h1>
             </div>
-            <div class="col-sm-6 d-flex justify-content-end my-2">
-                <nav>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">الصفحه الرئيسيه </a></li>
-                        <li class="breadcrumb-item">الأحصائيات</li>
-                        <li class="breadcrumb-item active">عرض</li>
-                    </ol>
-                </nav>
-            </div>
         </div><!-- End Page Title -->
         <section class="section">
             <div class="row">

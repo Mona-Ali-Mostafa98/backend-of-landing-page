@@ -2,13 +2,6 @@
     <aside id="sidebar" class="sidebar">
         <ul class="sidebar-nav" id="sidebar-nav">
             <li class="nav-item">
-                <a class="nav-link fs-5" href="{{ route('dashboard') }}">
-                    <i class="bi bi-house-fill"></i>
-                    <span class="p-2">الصفحه الرئيسيه</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
                 <a class="nav-link collapsed fs-5" href="{{ route('admin.settings.index') }}">
                     <i class="bi bi-gear"></i>
                     <span class="p-2">الاعدادات</span>

@@ -13,5 +13,5 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('landing-page',[WebsiteController::class , 'index'] )->name('landing-page');
+Route::get('/',[WebsiteController::class , 'index'] )->name('landing-page');
 Route::post('news-subscription',[WebsiteController::class , 'subscribe'] )->name('news-subscription');

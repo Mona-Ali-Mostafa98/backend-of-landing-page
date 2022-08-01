@@ -11,7 +11,7 @@ class NewsController extends Controller
     public function index()
     {
         return view('admin.news.index', [
-            'subscriptions' => News:: paginate(10) ,
+            'subscriptions' => News:: simplePaginate() ,
         ]);
     }
 
