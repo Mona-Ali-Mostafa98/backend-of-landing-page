@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\SettingController;
@@ -17,7 +19,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('admin')->name('admin.')->group(function () {
+Route::get('admin/login', [AdminController::class, 'login'])->name('admin.login');
+Route::post('admin/dologin', [AdminController::class, 'dologin'])->name('admin.dologin');
+
+
+Route::middleware('isAdmin:admin')->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
     Route::resource('settings', SettingController::class)->only('index', 'show', 'update', 'edit');
     Route::resource('features', FeatureController::class);
     Route::resource('social-links', SocialLinkController::class)->except('create','store');

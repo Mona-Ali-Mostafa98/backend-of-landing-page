@@ -45,4 +45,14 @@
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
         </div><!-- End Logo -->
+        <nav class="header-nav me-auto">
+            <ul class="d-flex align-items-center">
+                <li class="nav-item dropdown pe-3">
+                    <a class="nav-link nav-profile d-flex align-items-center pe-2" href="{{ route('admin.logout') }}">
+                        <span>Sign Out</span>
+                    </a>
+            </ul>
+            </li><!-- End Profile Nav -->
+            </ul>
+        </nav>
     </header><!-- End Header -->
